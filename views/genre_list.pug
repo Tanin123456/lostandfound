@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1=title
+
+    ui
+        each genre in genre_list_to_pug
+            li
+                a(href=genre.url) #{genre.name}
+
+        else
+            li
+                | There are no genres

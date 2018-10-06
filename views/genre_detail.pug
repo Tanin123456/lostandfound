@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1=title
+        | : #{genre_list_to_detail_page.name}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+    ui
+        h4=genre_list_to_detail_page.name
+        ui
+        br
+        br
+        dl
+            each book in genre_books_to_detail_page
+                dt
+                    a(href=book.url) #{book.title}
+                    dd #{book.summary}
+            else
+                p This Genre has no books
+

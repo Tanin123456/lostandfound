@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/stylesheets/style.css', media='screen')
+    script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+  body
+    div(class='navbar')
+        nav(class='navbar navbar-fixed-top navbar-inverse' role='navigation')
+          div(class='container')
+            div(class='navbar-header')
+              button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-ex1-collapse')
+                // Brand and toggle get grouped for better mobile display
+                span(class='sr-only') Toggle navigation
+                span(class='icon-bar')
+                span(class='icon-bar')
+                span(class='icon-bar')
+
+              a(class='navbar-brand' href='#') YOURSITE.COM
+
+            //!-- Collect the nav links, forms, and other content for toggling
+            div(class='collapse navbar-collapse navbar-ex1-collapse')
+              ul(class='nav navbar-nav')
+                li
+                  a(href='#') Link 1
+                li
+                  a(href='#') Link 2
+                li(class='dropdown')
+                  a(href='#' class='dropdown-toggle' data-toggle='dropdown') Dropdown
+                    b(class='caret')
+                  ul(class='dropdown-menu')
+                    li
+                      a(href='#') action
+                    li
+                      a(href='#') another action
+                    li
+                      a(href='#') Something else here
+                    li
+                      a(href='#') Separated link
+                    li
+                      a(href='#') One more separated link
+
+              ul(class='nav navbar-nav navbar-right')
+                a(class='btn btn-success btn-sm navbar-btn' style='margin-left:10px;' href='#') Sign in
+                a(class='btn btn-danger btn-sm navbar-btn' href='#') Sign up
+                div(class='btn-group ')
+                  button(class='btn btn-info navbar-btn btn-sm') En
+                  button(class='btn dropdown-toggle navbar-btn btn-info btn-sm' data-toggle='dropdown')
+                    span(class='caret')
+                  ul(class='dropdown-menu' style='min-width:30px;')
+                    //!-- dropdown menu links
+                    li
+                      a(href='#') Ru
+                    li
+                      a(href='#') Fr
+                    li
+                      a(href='#') Es
+
+    //div(style='height: 180px')
+    section(class='container')
+      div(class='panel panel-default' id='list-groups')
+        div(class='panel-heading') List Groups
+          div(class='panel-body')
+            div(class='row')
+              div(class='col-lg-4')
+                block sidebar
+                  ul(class='list-group')
+                    a(href='/catalog' class='list-group-item') Home
+                    a(href='/catalog/books' class='list-group-item') All books
+                    a(href='/catalog/authors' class='list-group-item') All authors
+                    a(href='/catalog/genres' class='list-group-item') All genres
+                    a(href='/catalog/bookinstances' class='list-group-item') All book-instances
+                    hr
+                    a(href='/catalog/author/create' class='list-group-item') Create new author
+                    a(href='/catalog/genre/create' class='list-group-item') Create new genre
+                    a(href='/catalog/book/create' class='list-group-item') Create new book
+                    a(href='/catalog/bookinstance/create' class='list-group-item') Create new book instance (copy)
+              div(class='col-lg-4')
+                block content
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='/javascript/bootstrap.min.js')
